@@ -55,3 +55,20 @@ To run the preprocessing scripts locally, ensure you have Python installed along
 
 ```bash
 pip install mne matplotlib numpy
+
+
+
+## 🚀 Advanced Cleanup & Artifact Management Pipeline
+
+Beyond basic filtering and ICA, an automated advanced cleaning procedure was applied:
+
+1. **Automated Bad Channel Detection & Interpolation:**
+   - Implemented standard deviation thresholding (`3-Sigma Rule`) exclusively on EEG channels.
+   - Faulty/noisy channels are automatically detected and repaired using **Spherical Spline Interpolation**.
+
+2. **Fixed-Length Epoching:**
+   - Segmented continuous EEG data into uniform **2.0-second epochs**.
+
+3. **Peak-to-Peak Artifact Rejection:**
+   - Applied an amplitude rejection threshold of **100 µV** (`reject=dict(eeg=100e-6)`).
+   - High-amplitude muscular and movement artifacts were automatically rejected, retaining **~93% of clean EEG epochs** for spectral analysis.
