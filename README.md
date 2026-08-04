@@ -56,9 +56,9 @@ To run the preprocessing scripts locally, ensure you have Python installed along
 ```bash
 pip install mne matplotlib numpy
 
+---------------------------------------------------------------
 
-
-## 🚀 Advanced Cleanup & Artifact Management Pipeline
+# 🚀 Advanced Cleanup & Artifact Management Pipeline
 
 Beyond basic filtering and ICA, an automated advanced cleaning procedure was applied:
 
